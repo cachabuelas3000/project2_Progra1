@@ -145,6 +145,23 @@ public class Invoice {
 	
 
 	
+	@Override
+	public int hashCode() {
+	    return Integer.hashCode(id);
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+
+	    if (this == obj)
+	        return true;
+
+	    if (obj == null || getClass() != obj.getClass())
+	        return false;
+
+	    Invoice other = (Invoice) obj;
+
+	    return id == other.id;
+	}
     
 }
