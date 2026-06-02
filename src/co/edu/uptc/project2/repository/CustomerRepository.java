@@ -25,7 +25,7 @@ public class CustomerRepository {
     }
 
     // Consultar todos
-    public List<Customer> findAll() {
+    public List<Customer> findAll() { 
         return new ArrayList<>(customers);
     }
 
