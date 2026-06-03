@@ -2,10 +2,10 @@ package co.edu.uptc.project2.ui;
 
 import java.util.Scanner;
 
-import co.edu.uptc.project2.service.CustomerService;
 import co.edu.uptc.project2.ui.controller.CustomerController;
 import co.edu.uptc.project2.ui.controller.InvoiceController;
 import co.edu.uptc.project2.ui.controller.InvoiceDetailController;
+
 
 public class Main {
 
@@ -13,12 +13,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // El CustomerService se comparte para que InvoiceController pueda buscar clientes
-        CustomerService sharedCustomerService = new CustomerService();
-
-        CustomerController customerController = new CustomerController(scanner, sharedCustomerService);
+        // CustomerController se construye primero y comparte su servicio con InvoiceController
+        // a través de un método getter — así Main no necesita importar ningun Service
+        CustomerController customerController = new CustomerController(scanner);
         InvoiceDetailController detailController = new InvoiceDetailController(scanner);
-        InvoiceController invoiceController = new InvoiceController(scanner, sharedCustomerService);
+        InvoiceController invoiceController = new InvoiceController(scanner, customerController.getService());
 
         int option = -1;
 

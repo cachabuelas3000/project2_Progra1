@@ -15,9 +15,15 @@ public class CustomerService {
 
     // Crear cliente
     public boolean createCustomer(Customer customer) {
-        if (customer == null) return false;
-        if (customer.getName() == null || customer.getName().isBlank()) return false;
-        if (customer.getDocumentNumber() == null || customer.getDocumentNumber().isBlank()) return false;
+        if (customer == null) {
+        	return false;
+        }
+        if (customer.getName() == null || customer.getName().isBlank()) {
+        	return false;
+        }
+        if (customer.getDocumentNumber() == null || customer.getDocumentNumber().isBlank()) {
+        	return false;
+        }
         return customerRepository.add(customer);
     }
 
@@ -28,19 +34,25 @@ public class CustomerService {
 
     // Consultar por número de documento
     public Customer getCustomerById(String documentNumber) {
-        if (documentNumber == null || documentNumber.isBlank()) return null;
+        if (documentNumber == null || documentNumber.isBlank()) {
+        	return null;
+        }
         return customerRepository.findById(documentNumber);
     }
 
     // Actualizar cliente
     public boolean updateCustomer(String documentNumber, Customer updated) {
-        if (documentNumber == null || updated == null) return false;
+        if (documentNumber == null || updated == null) {
+        	return false;
+        }
         return customerRepository.update(documentNumber, updated);
     }
 
     // Eliminar cliente
     public boolean deleteCustomer(String documentNumber) {
-        if (documentNumber == null || documentNumber.isBlank()) return false;
+        if (documentNumber == null || documentNumber.isBlank()) {
+        	return false;
+        }
         return customerRepository.delete(documentNumber);
     }
 }

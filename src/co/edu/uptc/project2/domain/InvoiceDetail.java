@@ -80,11 +80,11 @@ public class InvoiceDetail {
 
     @Override
     public String toString() {
-        return "InvoiceDetail [productName=" + productName
-                + ", quantity=" + quantity
-                + ", unitPrice=" + unitPrice
+        return "Detalles de factura [Nombre del producto=" + productName
+                + ", cantidad=" + quantity
+                + ", precio unitario=" + unitPrice
                 + ", subtotal=" + subtotal
-                + ", category=" + category + "]";
+                + ", categoría=" + category + "]";
     }
 
     // equals() y hashCode()

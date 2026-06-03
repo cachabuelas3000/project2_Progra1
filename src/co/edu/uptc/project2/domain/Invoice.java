@@ -27,8 +27,6 @@ public class Invoice {
     public Invoice() {
         details = new HashSet<>();
     }
-    
-    
 
     public Invoice(int id, String code, String date, double total, boolean paid,
             PaymentMethod paymentMethod, InvoiceStatus invoiceStatus,
@@ -49,101 +47,80 @@ public class Invoice {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getCode() {
 		return code;
 	}
 
-
 	public void setCode(String code) {
 		this.code = code;
 	}
-
 
 	public String getDate() {
 		return date;
 	}
 
-
 	public void setDate(String date) {
 		this.date = date;
 	}
-
 
 	public double getTotal() {
 		return total;
 	}
 
-
 	public void setTotal(double total) {
 		this.total = total;
 	}
-
 
 	public boolean isPaid() {
 		return paid;
 	}
 
-
 	public void setPaid(boolean paid) {
 		this.paid = paid;
 	}
-
 
 	public PaymentMethod getPaymentMethod() {
 		return paymentMethod;
 	}
 
-
 	public void setPaymentMethod(PaymentMethod paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
-
 
 	public InvoiceStatus getInvoiceStatus() {
 		return invoiceStatus;
 	}
 
-
 	public void setInvoiceStatus(InvoiceStatus invoiceStatus) {
 		this.invoiceStatus = invoiceStatus;
 	}
-
 
 	public Customer getCustomer() {
 		return customer;
 	}
 
-
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
 
 	public Set<InvoiceDetail> getDetails() {
 	    return details;
 	}
 
-
 	public void setDetails(Set<InvoiceDetail> details) {
 	    this.details = details;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "Invoice [id=" + id + ", code=" + code + ", date=" + date + ", total=" + total + ", paid=" + paid
-				+ ", paymentMethod=" + paymentMethod + ", invoiceStatus=" + invoiceStatus + ", customer=" + customer
-				+ ", details=" + details + "]";
+		return "Factura [id=" + id + ", código=" + code + ", fecha=" + date + ", total=" + total + ", pagado=" + paid
+				+ ", método de pago=" + paymentMethod + ", estado de la factura=" + invoiceStatus + ", cliente=" + customer
+				+ ", detalles=" + details + "]";
 	}
-	
-
 	
 	@Override
 	public int hashCode() {

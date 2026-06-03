@@ -15,9 +15,15 @@ public class InvoiceService {
 
     // Crear factura
     public boolean createInvoice(Invoice invoice) {
-        if (invoice == null) return false;
-        if (invoice.getCode() == null || invoice.getCode().isBlank()) return false;
-        if (invoice.getCustomer() == null) return false;
+        if (invoice == null) {
+        	return false;
+        }
+        if (invoice.getCode() == null || invoice.getCode().isBlank()) {
+        	return false;
+        }
+        if (invoice.getCustomer() == null) {
+        	return false;
+        }
         return invoiceRepository.add(invoice);
     }
 
@@ -33,7 +39,9 @@ public class InvoiceService {
 
     // Actualizar factura
     public boolean updateInvoice(int id, Invoice updated) {
-        if (updated == null) return false;
+        if (updated == null) {
+        	return false;
+        }
         return invoiceRepository.update(id, updated);
     }
 
